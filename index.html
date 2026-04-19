@@ -1,76 +1,29 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <section id="about" class="section about">
-    <div class="container">
-        <img src="your-photo.jpg" alt="Profile Picture" class="profile-pic">
-
-      <h2>About Me</h2>
-      <p>Hi! I'm Jinx, a passionate web development student learning HTML, CSS, and JavaScript. I enjoy building clean and responsive websites.</p>
-      <p>I love learning new things, solving coding problems, and exploring design ideas.</p>
-    </div>
-  </section>
-  <section id="projects" class="section projects">
-    <div class="container">
-      <h2>Projects</h2>
-      
-      <div class="project-list">
-        <div class="project-card">
-          <h3>Project 1</h3>
-          <p>A simple landing page built with HTML and CSS.</p>
-          <a href="index.html" target="_blank">View Project</a>
-        </div>
-  
-        <div class="project-card">
-          <h3>Project 2</h3>
-          <p>A to-do list app made using JavaScript.</p>
-          <a href="#" target="_blank">View Project</a>
-        </div>
-        
-        <!-- You can add more cards here -->
-      </div>
-    </div>
-  </section>
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out! You can use the form below or message me on social media.</p>
-  
-      <!-- Contact Form -->
-      <form class="contact-form" action="#" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-  
-      <!-- Social Links -->
-       <!--rick roll-->>
-      <div class="socials">
-        <a href="https://github.com/" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/sanju-thomas-70335a319/" target="_blank">LinkedIn</a>
-        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Email</a>
-      </div>
-    </div>
-  </section>
-  
-
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sanju Thomas — Antigravity System Interface. Portfolio of a CSE engineer operating in zero-gravity." />
+    <meta name="author" content="Sanju Thomas" />
+    <meta name="theme-color" content="#020406" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SANJU.SYS — Antigravity Interface" />
+    <meta property="og:description" content="Portfolio of Sanju Thomas — ML, Cyber, Systems. Built for zero-gravity." />
+    <meta property="og:url" content="https://sanju464.github.io" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="SANJU.SYS — Antigravity Interface" />
+    <meta name="twitter:description" content="Portfolio of Sanju Thomas — ML, Cyber, Systems." />
+    <title>SANJU.SYS — Antigravity Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
