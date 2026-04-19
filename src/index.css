@@ -1,0 +1,264 @@
+:root {
+  --bg-void: #020406;
+  --bg-deep: #040810;
+  --bg-surface: #060d1a;
+  --bg-elevated: #0a1525;
+  --accent: #00ff88;
+  --accent-dim: #00ff8833;
+  --accent-glow: #00ff8815;
+  --text-primary: #e8f4f0;
+  --text-secondary: #6b8a7a;
+  --text-muted: #2d4a3a;
+  --border: #0d2a1d;
+  --border-bright: #00ff8840;
+  --grid-color: rgba(0, 255, 136, 0.03);
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: var(--accent-dim); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Selection */
+::selection {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+/* Global link reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Mono utility */
+.mono { font-family: var(--font-mono); }
+
+/* Neon text */
+.neon {
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent-dim);
+}
+
+.custom-text-glow {
+  filter: drop-shadow(0 0 25px rgba(0,255,136,0.15)) drop-shadow(0 0 80px rgba(0,255,136,0.05));
+}
+
+.glow-pulse {
+  animation: glow-pulse-anim 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse-anim {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(0,255,136,0.1)); opacity: 0.7; }
+  50% { filter: drop-shadow(0 0 20px rgba(0,255,136,0.5)); opacity: 1; }
+}
+
+/* Soft border */
+.sys-border {
+  border: 1px solid var(--border-bright);
+  border-radius: 2px;
+}
+
+/* Glow card */
+.glow-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-bright);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px var(--accent-dim),
+    inset 0 0 40px rgba(0,255,136,0.02),
+    0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; box-shadow: 0 0 10px var(--accent); }
+  50% { opacity: 1; box-shadow: 0 0 30px var(--accent), 0 0 60px var(--accent-dim); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-8px) rotate(0.5deg); }
+  66% { transform: translateY(-4px) rotate(-0.3deg); }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(3px, -5px) rotate(0.5deg); }
+  50% { transform: translate(0, -8px) rotate(0deg); }
+  75% { transform: translate(-3px, -3px) rotate(-0.5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes noise-shift {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-5%, -5%); }
+}
+
+@keyframes node-pulse {
+  0%, 100% { r: 3; opacity: 0.8; }
+  50% { r: 5; opacity: 1; }
+}
+
+/* Starfield */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.8; }
+}
+
+/* Terminal cursor */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink::after {
+  content: '▋';
+  animation: cursor-blink 1s step-end infinite;
+  color: var(--accent);
+}
+
+/* Status indicator */
+.status-active {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.status-active::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse-glow 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.status-idle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary);
+}
+
+.status-idle::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  border: 1px solid var(--text-secondary);
+  flex-shrink: 0;
+}
+
+/* Section label */
+.sys-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+/* Scanline effect */
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(0,255,136,0.05), transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* Terminal styles */
+.terminal-container {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.terminal-line { color: var(--text-primary); }
+.terminal-prompt { color: var(--accent); }
+.terminal-output { color: var(--text-secondary); }
+.terminal-error { color: #ff4444; }
+.terminal-success { color: var(--accent); }
+
+/* Prevent default outline, use custom */
+:focus { outline: none; }
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
