@@ -80,10 +80,10 @@ const COMMANDS = {
 };
 
 const BOOT_SEQUENCE = [
-  'SANJU.SYS v2.6.0 — Antigravity Interface',
+  'SANJU.SYS v2.6.0 — System Interface',
   'Initializing subsystems...',
   'Loading cognitive matrix... OK',
-  'Establishing zero-G environment... OK',
+  'Establishing secure environment... OK',
   'Module registry synced.',
   '',
   'Type "help" to view available commands.',

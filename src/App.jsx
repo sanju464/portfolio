@@ -310,7 +310,7 @@ export default function App() {
               <span className="font-mono text-sm font-bold tracking-widest text-white">SYSTEM.END</span>
             </div>
             <p className="font-mono text-xs text-white/40 leading-relaxed">
-              Design pattern based on zero-G operational environments. Built with React and Framer Motion.
+              Design pattern based on secure operational environments. Built with React and Framer Motion.
             </p>
           </div>
 
