@@ -15,7 +15,7 @@ import fadePlaneVertexShader from "./shaders/fadePlaneVertexShader.glsl?raw";
 import fadePlaneFragmentShader from "./shaders/fadePlaneFragementShader.glsl?raw"
 
 /**  -------------------------- Global Variables -------------------------- */
-const canvas = document.querySelector("#experience-canvas");
+let canvas = document.querySelector("#experience-canvas");
 
 const sizes = {
   width: window.innerWidth,
