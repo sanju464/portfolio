@@ -1909,21 +1909,21 @@ render();
 
 /**  -------------------------- project-page -------------------------- */
 const projectData = {
-  interphysis: {
-    title: "Interphysis",
-    path: "C:\\WINNT\\SYSTEM32\\Weisdevice\\Work\\Interphysis"
+  "pok-typenet": {
+    title: "Pok-TypeNet",
+    path: "C:\\SANJU.OS\\SYSTEM32\\Sanju\\Work\\Pok-TypeNet"
   },
-  anglerfish: {
-    title: "Anglerfish",
-    path: "C:\\WINNT\\SYSTEM32\\Weisdevice\\Work\\Anglerfish"
+  "mergeforge": {
+    title: "MergeForge",
+    path: "C:\\SANJU.OS\\SYSTEM32\\Sanju\\Work\\MergeForge"
   },
-  dna: {
-    title: "DNA",
-    path: "C:\\WINNT\\SYSTEM32\\Weisdevice\\Work\\DNA"
+  "network-monitor": {
+    title: "Network Monitor",
+    path: "C:\\SANJU.OS\\SYSTEM32\\Sanju\\Work\\Network Monitor"
   },
-  futurehuman: {
-    title: "Futurehuman",
-    path: "C:\\WINNT\\SYSTEM32\\Weisdevice\\Work\\Futurehuman"
+  "coursework-alert-system": {
+    title: "Coursework Alert System",
+    path: "C:\\SANJU.OS\\SYSTEM32\\Sanju\\Work\\Coursework Alert System"
   }
 };
 
